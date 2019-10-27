@@ -1,4 +1,4 @@
-package Dam_M_09.claus.Cursa.Model;
+package Dam_M_03.Cursa.Model;
 
 public class Patinete {
 

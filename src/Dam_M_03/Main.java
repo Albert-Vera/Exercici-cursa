@@ -1,4 +1,4 @@
-package Dam_M_09.claus;
+package Dam_M_03;
 
 public class Main {
 
