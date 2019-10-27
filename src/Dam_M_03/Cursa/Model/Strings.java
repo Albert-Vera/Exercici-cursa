@@ -10,4 +10,7 @@ public class Strings {
     }
 
     private String text_1 = "Introduce tu nombre: ";
+
+
+    // EN ESTA CLASE PODEMOS METER TODOS LOS TEXTOS Y PASARLOS POR PARAMETROS DONDE TOQUE
 }
