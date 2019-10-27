@@ -28,7 +28,7 @@ public class IniciarPartida {
             System.out.print("Elige una opción: ");
             int opcion = entrada.nextInt();
 
-            new Jugador_Inical().iniciarJugador();
+            new Print_Jugador_ini().iniciarJugador();
 
             switch (opcion) {
                 case 1:
