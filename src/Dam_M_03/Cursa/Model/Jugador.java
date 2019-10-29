@@ -4,7 +4,7 @@ public class Jugador {
 
     private String nombre;
 
-    public String getNombre() {
+    public String getNombre(String s) {
         return nombre;
     }
 
