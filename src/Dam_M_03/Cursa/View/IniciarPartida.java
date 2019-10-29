@@ -1,9 +1,6 @@
 package Dam_M_03.Cursa.View;
 
 import Dam_M_03.Cursa.Manager.*;
-import UF_1.Cursa.Manager.Configuracio;
-import UF_1.Cursa.Manager.Jugar;
-import UF_1.Cursa.Manager.Resultats;
 
 import java.util.Scanner;
 
@@ -28,7 +25,7 @@ public class IniciarPartida {
             System.out.print("Elige una opción: ");
             int opcion = entrada.nextInt();
 
-            new Print_Jugador_ini().iniciarJugador();
+            new Jugador_Inicial().iniciar_Jugador();
 
             switch (opcion) {
                 case 1:
