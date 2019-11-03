@@ -24,7 +24,8 @@ public class MainMenuScreen {
 
             switch (opcion) {
                 case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
-                    new CompetitionMenuScreen().show();
+                    new Show().configuracion();
+
                     break;
                 case 2: // JUGAR
                     new PlayMenuScreen().show();
