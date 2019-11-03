@@ -27,8 +27,8 @@ public class Show {
         System.out.println();
         System.out.println("Número de participantes: " + jugadores.getOponentes()+1 );
         System.out.println("Número de circuitos: " + circuito.getCircuitos());
-        System.out.println("Vehiculo:   " + vehicle.getCategoria());
-
+        System.out.println("Vehiculo:   " + vehicle.getCategoria() + "\n\n");
+        System.out.println("AQUI IMPRIMIR LISTADO DE JUGADORES QUE VAN A CORRER\n\n");
         // AQUI IMPRIMIR EL LISTADO DE JUGADORES ... SOLO NUMEROS Y NOMBRE JUGADOR
     }
 }

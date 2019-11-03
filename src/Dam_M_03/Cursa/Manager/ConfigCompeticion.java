@@ -22,7 +22,7 @@ public class ConfigCompeticion {
 
     public static int circuitos(){
 
-        return sc.nextInt());
+        return sc.nextInt();
     }
 
     public static String configVehiculo(){
