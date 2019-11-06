@@ -1,8 +1,5 @@
 package Dam_M_03.Cursa.View;
 
-import Dam_M_03.Cursa.View.Play.PlayMenuScreen;
-import Dam_M_03.Cursa.View.Score.ScoreMenuScreen;
-
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -27,7 +24,7 @@ public class MainMenuScreen {
 
             switch (opcion) {
                 case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
-                    new Show_Eliminar().configuracion();
+                    new CompetitionMenuScreen().configuracion();
 
                     break;
                 case 2: // JUGAR

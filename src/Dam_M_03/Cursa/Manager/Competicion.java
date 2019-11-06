@@ -5,7 +5,7 @@ import Dam_M_03.Cursa.Model.*;
 
 import java.util.Scanner;
 
-public class ConfigCompeticion {
+public class Competicion {
     private static Scanner sc = new Scanner(System.in);
     static Jugadores jugador =  new Jugadores();
     public static void insertarJugador(){

@@ -1,30 +1,50 @@
 package Dam_M_03.Cursa.Model;
 
-import java.util.ArrayList;
-
 public class Jugadores {
 
-    private ArrayList<String> nombreJugador = new ArrayList<String>();
-    //Como se hace un array list de jugadores con un constructor
-    // Podria ser la primera vez un constructor normal
-    // Despues recorrer un for que sea Piloto 1..4
+    private String nombreJugador;
     private int oponentes;
-    // Donde ponemos la puntuación??
-    // Esto sera un array list
+        private float tiempo;
+
+    public Jugadores(float tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    public float getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(float tiempo) {
+//        for (int i = 0; i < participantes ; i++) {
+////            tiempo.add
+////        }
+        this.tiempo = tiempo;
+    }
 
     public int getOponentes() {
-        return oponentes+1;
+        return oponentes;
     }
 
     public void setOponentes(int oponentes) {
-        this.oponentes = oponentes;
+//        arraylist.add(nombre);
+//        for (int i = 0; i < participantes ; i++) {
+//            oponentes0.add
+//        }
+        this.oponentes = oponentes +1;
     }
 
-    public String getNombreJugador(/*Esto sigue estando mal*/String s) {
+    public String getNombreJugador(String s) {
         return nombreJugador;
     }
 
     public void setNombreJugador(String nombreJugador) {
         this.nombreJugador = nombreJugador;
     }
+
+    void generarNombres (int participantes-1, String nombre) {
+
+    }
+
+    sortTiempos
+    sortJugadores
 }
