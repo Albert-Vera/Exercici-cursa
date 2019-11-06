@@ -1,6 +1,7 @@
 package Dam_M_03.Cursa.Model;
 
 public class Vehicle {
+    private String categoria;
 
     public String getCategoria() {
         return categoria;
@@ -10,5 +11,4 @@ public class Vehicle {
         this.categoria = categoria;
     }
 
-    private String categoria;
 }
