@@ -6,15 +6,15 @@ import Dam_M_03.Cursa.Model.*;
 import java.util.Scanner;
 
 public class Competicion {
-    private static Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
     static Jugadores jugador =  new Jugadores();
-    public static void insertarJugador(){
+    public static void insertarJugador(Scanner sc){
 
         jugador.setNombreJugador(sc.nextLine());
 
     }
 
-    public static int obtenerOponentes(){
+    public static int obtenerOponentes(Scanner sc){
 
         return sc.nextInt();
 

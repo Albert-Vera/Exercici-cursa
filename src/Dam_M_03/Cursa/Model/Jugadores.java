@@ -4,20 +4,22 @@ public class Jugadores {
 
     private String nombreJugador;
     private int oponentes;
-        private float tiempo;
+        private int tiempo;
 
-    public Jugadores(float tiempo) {
+    public Jugadores(int tiempo) {
         this.tiempo = tiempo;
     }
 
     public float getTiempo() {
+
+
         return tiempo;
     }
 
-    public void setTiempo(float tiempo) {
-//        for (int i = 0; i < participantes ; i++) {
-////            tiempo.add
-////        }
+    public void setTiempo(int tiempo) {
+
+
+        tiempo = (int) (Math.random()*10);
         this.tiempo = tiempo;
     }
 
@@ -26,14 +28,14 @@ public class Jugadores {
     }
 
     public void setOponentes(int oponentes) {
-//        arraylist.add(nombre);
-//        for (int i = 0; i < participantes ; i++) {
-//            oponentes0.add
-//        }
+
+        for (int i = 0; i < oponentes ; i++) {
+            //oponentes
+        }
         this.oponentes = oponentes +1;
     }
 
-    public String getNombreJugador(String s) {
+    public String getNombreJugador() {
         return nombreJugador;
     }
 
@@ -41,10 +43,10 @@ public class Jugadores {
         this.nombreJugador = nombreJugador;
     }
 
-    void generarNombres (int participantes-1, String nombre) {
-
-    }
-
-    sortTiempos
-    sortJugadores
+//    void generarNombres (int participantes-1, String nombre) {
+//
+//    }
+//
+//    sortTiempos
+//    sortJugadores
 }
