@@ -1,11 +1,14 @@
-package Dam_M_03.Cursa.View;
+package Dam_M_03.Cursa_2.View;
+
+import Dam_M_03.Cursa_2.Manager.PlayScreen;
+import Dam_M_03.Cursa_2.Model.DatosCompeti;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenuScreen {
     public static void showMenu() throws IOException {
-
+        DatosCompeti datos = new DatosCompeti();
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -24,11 +27,12 @@ public class MainMenuScreen {
 
             switch (opcion) {
                 case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
-                    new CompetitionMenuScreen().configuracion();
+                    new CompetitionMenuScreen().configuracion(datos);
+                    CompetitionMenuScreen.mostrarConfig(datos);
 
                     break;
                 case 2: // JUGAR
-                    new PlayMenuScreen().show();
+                    new PlayScreen().juego(datos);
                     break;
                 case 3: // RESULTADOS
                     new ScoreMenuScreen().show();

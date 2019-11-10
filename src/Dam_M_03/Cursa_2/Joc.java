@@ -1,6 +1,6 @@
-package Dam_M_03.Cursa;
+package Dam_M_03.Cursa_2;
 
-import Dam_M_03.Cursa.View.MainMenuScreen;
+import Dam_M_03.Cursa_2.View.MainMenuScreen;
 
 import java.io.IOException;
 

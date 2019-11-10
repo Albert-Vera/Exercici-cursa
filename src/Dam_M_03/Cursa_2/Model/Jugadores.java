@@ -1,4 +1,4 @@
-package Dam_M_03.Cursa.Model;
+package Dam_M_03.Cursa_2.Model;
 
 public class Jugadores {
 
@@ -6,7 +6,7 @@ public class Jugadores {
     private int oponentes;
         private int tiempo;
 
-    public Jugadores(int tiempo) {
+    public Jugadores() {
         this.tiempo = tiempo;
     }
 
