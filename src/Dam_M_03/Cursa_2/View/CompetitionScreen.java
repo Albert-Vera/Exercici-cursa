@@ -5,7 +5,7 @@ import Dam_M_03.Cursa_2.Model.DatosCompeti;
 
 import static Dam_M_03.Cursa_2.Manager.Competicion.*;
 
-public class CompetitionMenuScreen { // CLASE SUPRIMIDA
+public class CompetitionScreen { // CLASE SUPRIMIDA
 
 
 //static DatosCompeti datos = new DatosCompeti();
@@ -14,7 +14,7 @@ public class CompetitionMenuScreen { // CLASE SUPRIMIDA
         System.out.println("Introduce tu nombre: ");
         insertarJugador(datos);
         System.out.println("Introduce número de oponentes: ");
-       obtenerOponentes(datos);
+        obtenerOponentes(datos);
         System.out.println("Introduce número de circuitos: ");
         circuitos(datos);
         System.out.println("Elije con que vas a competir: ( Coche / Bicicleta / Patinete ) ");

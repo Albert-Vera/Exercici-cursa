@@ -10,6 +10,7 @@ public class MainMenuScreen {
     public static void showMenu() throws IOException {
         DatosCompeti datos = new DatosCompeti();
         Scanner sc = new Scanner(System.in);
+        boolean b = false;
 
         while (true) {
             System.out.println("Cursa 2019");
@@ -23,25 +24,32 @@ public class MainMenuScreen {
             System.out.print("Elige una opción: ");
             int opcion = sc.nextInt();
 
+            while (opcion == 1 || b || opcion == 4) {
 
-
-            switch (opcion) {
-                case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
-                    new CompetitionMenuScreen().configuracion(datos);
-                    CompetitionMenuScreen.mostrarConfig(datos);
-
-                    break;
-                case 2: // JUGAR
-                    new PlayScreen().juego(datos);
-                    break;
-                case 3: // RESULTADOS
-                    new ScoreMenuScreen().show();
-                    break;
-                case 4: // SALIR
-                    return;
-                default:
-                    System.out.println("Ese valor no es válido");
-                   break;
+                switch (opcion) {
+                    case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
+                        new CompetitionScreen().configuracion(datos);
+                        b = true;
+                        CompetitionScreen.mostrarConfig(datos);
+                        break;
+                    case 2: // JUGAR
+                        new PlayScreen().juego(datos);
+                        break;
+                    case 3: // RESULTADOS
+                        new ScoreScreen().show();
+                        break;
+                    case 4: // SALIR
+                        return;
+                    default:
+                        System.out.println("Ese valor no es válido");
+                        break;
+                }
+                break;
+            }
+            if (b == false) {
+                System.out.println("------------------------------");
+                System.out.println("Primer configura la competició");
+                System.out.println("------------------------------");
             }
         }
     }

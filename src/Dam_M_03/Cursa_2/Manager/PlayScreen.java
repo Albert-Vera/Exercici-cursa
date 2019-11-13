@@ -2,7 +2,7 @@ package Dam_M_03.Cursa_2.Manager;
 
 
 import Dam_M_03.Cursa_2.Model.DatosCompeti;
-import Dam_M_03.Cursa_2.View.Clasificacion;
+import Dam_M_03.Cursa_2.View.ClasificationScreen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +16,9 @@ public class PlayScreen  {
         List<DatosCompeti> clasificacion = new ArrayList<>();
         int circuitos = datos.getCircuito();
         int op = datos.getOponentes();
-        new Clasificacion().cabecera();
+        new ClasificationScreen().cabecera();
 
-        for (int i = 1; i < circuitos+1; i++) {     // FOR DE CIRCUITOS
+        for (int i = 0; i < circuitos; i++) {     // FOR DE CIRCUITOS
 
             for (int j = 0; j < op; j++) {      // FOR DE OPONENTES
                 int horas = obtenerTiempos(2);
@@ -37,6 +37,7 @@ public class PlayScreen  {
                 }else {             // ESTO PARA RESTO OPONENTES
                     datosCompeti.setOponentes(j-1); // problemas con el setter +1
                     datosCompeti.setCircuito(i);
+                    // set horas, sino la variable horas fuera
                     datosCompeti.setMinutos(minutos);
                     datosCompeti.setSegundos(segundos);
                     //datosCompeti.setPuntuacion();
@@ -47,7 +48,7 @@ public class PlayScreen  {
             }
             sort(clasificacion, new CompararTiempos(clasificacion));
             int puntos= 12;
-            new Clasificacion().showClasificacion(clasificacion, puntos);
+            new ClasificationScreen().showClasificacion(clasificacion, puntos);
             clasificacion.clear();
         }
     }
