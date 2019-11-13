@@ -23,7 +23,7 @@ public class DatosCompeti {
         this.puntuacion = puntuacion;
         this.totalPuntuacion = totalPuntuacion;
         this.oponentes = oponentes;
-        this.vehiculo = getVehiculo();
+        this.vehiculo = vehiculo;
     }
 
     public int getSegundos() {

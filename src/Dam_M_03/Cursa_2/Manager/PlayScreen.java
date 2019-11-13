@@ -3,6 +3,7 @@ package Dam_M_03.Cursa_2.Manager;
 
 import Dam_M_03.Cursa_2.Model.DatosCompeti;
 import Dam_M_03.Cursa_2.View.ClasificationScreen;
+import Dam_M_03.Cursa_2.View.ClasificationScreen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +15,12 @@ public class PlayScreen  {
     public static void juego(DatosCompeti datos){//modificado
 
         List<DatosCompeti> clasificacion = new ArrayList<>();
+        ArrayList<String> puntuaciones = new ArrayList<>();
         int circuitos = datos.getCircuito();
         int op = datos.getOponentes();
         new ClasificationScreen().cabecera();
 
-        for (int i = 0; i < circuitos; i++) {     // FOR DE CIRCUITOS
+        for (int i = 1; i < circuitos+1; i++) {     // FOR DE CIRCUITOS
 
             for (int j = 0; j < op; j++) {      // FOR DE OPONENTES
                 int horas = obtenerTiempos(2);
@@ -37,10 +39,9 @@ public class PlayScreen  {
                 }else {             // ESTO PARA RESTO OPONENTES
                     datosCompeti.setOponentes(j-1); // problemas con el setter +1
                     datosCompeti.setCircuito(i);
-                    // set horas, sino la variable horas fuera
                     datosCompeti.setMinutos(minutos);
                     datosCompeti.setSegundos(segundos);
-                    //datosCompeti.setPuntuacion();
+                   // datosCompeti.setPuntuacion();
                     //datosCompeti.setTotalPuntuacion();
 
                 }
@@ -48,9 +49,15 @@ public class PlayScreen  {
             }
             sort(clasificacion, new CompararTiempos(clasificacion));
             int puntos= 12;
-            new ClasificationScreen().showClasificacion(clasificacion, puntos);
+
+            new ClasificationScreen().showClasificacion(clasificacion, puntos, puntuaciones);
             clasificacion.clear();
+
         }
+    }
+
+    static void totalPuntos (){
+
     }
 
     static int obtenerTiempos(int a){
