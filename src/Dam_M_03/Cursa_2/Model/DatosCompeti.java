@@ -14,6 +14,7 @@ public class DatosCompeti {
     public DatosCompeti() {
     }
 
+    //porque vehiculo no es this.vehiculo=vehiculo;
     public DatosCompeti(String nombre, int circuito, int minutos, int segundos, int puntuacion, int totalPuntuacion, int oponentes, String vehiculo) {
         this.nombre = nombre;
         this.circuito = circuito;
