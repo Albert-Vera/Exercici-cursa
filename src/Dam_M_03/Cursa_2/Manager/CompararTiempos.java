@@ -13,12 +13,26 @@ public class CompararTiempos implements Comparator<DatosCompeti> {
 
     @Override
     public int compare(DatosCompeti datos, DatosCompeti t1) {
-        if (datos.getMinutos() > t1.getMinutos()){
+
+        if (datos.getHoras() > t1.getHoras()) {
             return 1;
-        }else{
-            if (datos.getMinutos() < t1.getMinutos()){
+        } else {
+            if (datos.getHoras() < t1.getHoras()) {
                 return -1;
-            }else return 0;
+            } else {
+
+                if (datos.getMinutos() > t1.getMinutos()) {
+                    return 1;
+                } else {
+                    if (datos.getMinutos() < t1.getMinutos()) {
+                        return -1;
+                    } else if (datos.getSegundos() > t1.getSegundos()) {
+                        return 1;
+                    } else if (datos.getSegundos() < t1.getSegundos()) {
+                        return -1;
+                    } else return 0;
+                }
+            }
         }
-    };
+    }
 }

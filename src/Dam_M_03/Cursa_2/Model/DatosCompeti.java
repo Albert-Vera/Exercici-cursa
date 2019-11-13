@@ -5,6 +5,7 @@ public class DatosCompeti {
     private String nombre;
     private  String vehiculo;
     private int circuito;
+    private int horas;
     private int minutos;
     private int segundos;
     private int puntuacion;
@@ -18,6 +19,7 @@ public class DatosCompeti {
     public DatosCompeti(String nombre, int circuito, int minutos, int segundos, int puntuacion, int totalPuntuacion, int oponentes, String vehiculo) {
         this.nombre = nombre;
         this.circuito = circuito;
+        this.horas = horas;
         this.minutos = minutos;
         this.segundos = segundos;
         this.puntuacion = puntuacion;
@@ -52,6 +54,18 @@ public class DatosCompeti {
     public String getNombre() {
 
         return nombre;
+    }
+
+    public int getHoras() {
+        return horas;
+    }
+
+    public void setHoras(int horas) {
+        this.horas = horas;
+    }
+
+    public DatosCompeti(int horas) {
+        this.horas = horas;
     }
 
     public  void setNombre(String nomb) {

@@ -12,10 +12,10 @@ import static java.util.Collections.sort;
 
 public class PlayScreen  {
 
-    public static void juego(DatosCompeti datos){//modificado
+    public static void juego(DatosCompeti datos){
 
         List<DatosCompeti> clasificacion = new ArrayList<>();
-        ArrayList<String> puntuaciones = new ArrayList<>();
+        List<DatosCompeti> clasificacionCopia = new ArrayList<>();
         int circuitos = datos.getCircuito();
         int op = datos.getOponentes();
         new ClasificationScreen().cabecera();
@@ -32,27 +32,37 @@ public class PlayScreen  {
                 if (j == 0){        // ESTO ES PARA EL NOMBRE JUGADOR
                     datosCompeti.setNombre(datos.getNombre());
                     datosCompeti.setCircuito(i);
+                    datosCompeti.setHoras(horas);
                     datosCompeti.setMinutos(minutos);
                     datosCompeti.setSegundos(segundos);
-                    //datosCompeti.setPuntuacion();
-                    //datosCompeti.setTotalPuntuacion();
+
+                    for (DatosCompeti narices : clasificacionCopia) {
+                        if ( narices.getOponentes() == j ){
+                            datosCompeti.setTotalPuntuacion(narices.getTotalPuntuacion());
+                        }
+                    }
+                    datosCompeti.setTotalPuntuacion(datosCompeti.getTotalPuntuacion());
                 }else {             // ESTO PARA RESTO OPONENTES
                     datosCompeti.setOponentes(j-1); // problemas con el setter +1
                     datosCompeti.setCircuito(i);
+                    datosCompeti.setHoras(horas);
                     datosCompeti.setMinutos(minutos);
                     datosCompeti.setSegundos(segundos);
-                   // datosCompeti.setPuntuacion();
-                    //datosCompeti.setTotalPuntuacion();
 
+                    for (DatosCompeti narices : clasificacionCopia) {
+                        if ( narices.getOponentes() == j ){
+                            datosCompeti.setTotalPuntuacion(narices.getTotalPuntuacion());
+                        }
+                    }
                 }
                 clasificacion.add(datosCompeti);
             }
             sort(clasificacion, new CompararTiempos(clasificacion));
             int puntos= 12;
 
-            new ClasificationScreen().showClasificacion(clasificacion, puntos, puntuaciones);
+            clasificacionCopia = new ArrayList<>(clasificacion);
+            new ClasificationScreen().showClasificacion(clasificacion, puntos);
             clasificacion.clear();
-
         }
     }
 

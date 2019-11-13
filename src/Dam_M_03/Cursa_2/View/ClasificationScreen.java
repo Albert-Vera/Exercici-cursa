@@ -9,30 +9,22 @@ import java.util.List;
 public class ClasificationScreen {
 
     public void cabecera(){
-        System.out.println("     CIRCUITO        JUGADOR            TIEMPO      PUNTUACIÓN");
+        System.out.println("     CIRCUITO        JUGADOR            TIEMPO      PUNTUACIÓN       TOTAL PUNTOS");
     }
-//    puntuacionTotal = puntuacion+puntuacionTotal;
-//
-//    participante[] nombre puntuacionTotal;
-//
-//
-//    fori{
-//        participantes[];
-//    }
 
-    public void showClasificacion(List<DatosCompeti> clasificacion, int puntos, ArrayList<String> puntuaciones){
+    public void showClasificacion(List<DatosCompeti> clasificacion, int puntos){
         System.out.println();
 
         for (DatosCompeti resul : clasificacion){
             puntos = PlayScreen.asignarPuntuacion(puntos);
             resul.setPuntuacion(puntos);
+            resul.setTotalPuntuacion(resul.getTotalPuntuacion()+ puntos);
 
             if (resul.getOponentes() == 0){
-                puntuaciones.add(resul.getNombre()+" "+resul.getPuntuacion());
-                System.out.println("          "  + resul.getCircuito()+ "         " + resul.getNombre() + "              " +  resul.getMinutos() + ":" + resul.getSegundos() + "          " + resul.getPuntuacion() + "            "+ resul.getTotalPuntuacion());
-            }else
-                puntuaciones.add(resul.getOponentes()+" "+resul.getPuntuacion());
-                System.out.println("          "  + resul.getCircuito()+ "         Piloto " + resul.getOponentes() + "            " +  resul.getMinutos() + ":" + resul.getSegundos() + "          " + resul.getPuntuacion() + "            "+ resul.getTotalPuntuacion());
+                System.out.println("          "  + resul.getCircuito()+ "         " + resul.getNombre() + "              " +  resul.getHoras()+ ":"+ resul.getMinutos() + ":" + resul.getSegundos() + "          " + resul.getPuntuacion() + "            "+ resul.getTotalPuntuacion());
+            }else {
+                System.out.println("          " + resul.getCircuito() + "         Piloto " + resul.getOponentes() + "            " + resul.getHoras()+ ":"+ resul.getMinutos() + ":" + resul.getSegundos() + "          " + resul.getPuntuacion() + "            " + resul.getTotalPuntuacion());
+            }
         }
     }
 
