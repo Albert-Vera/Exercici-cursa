@@ -11,11 +11,12 @@ import java.util.List;
 import static java.util.Collections.sort;
 
 public class PlayScreen  {
+    public List<DatosCompeti> clasificacionCopia = new ArrayList<>();
 
-    public static void juego(DatosCompeti datos){
+    public  void juego(DatosCompeti datos){
 
         List<DatosCompeti> clasificacion = new ArrayList<>();
-        List<DatosCompeti> clasificacionCopia = new ArrayList<>();
+
         int circuitos = datos.getCircuito();
         int op = datos.getOponentes();
         new ClasificationScreen().cabecera();
@@ -64,6 +65,7 @@ public class PlayScreen  {
             new ClasificationScreen().showClasificacion(clasificacion, puntos);
             clasificacion.clear();
         }
+
     }
 
     static void totalPuntos (){

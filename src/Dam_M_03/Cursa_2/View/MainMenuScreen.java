@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenuScreen {
-    public static void showMenu() throws IOException {
+    PlayScreen playScreen = new PlayScreen();
+
+    public  void showMenu() throws IOException {
         DatosCompeti datos = new DatosCompeti();
         Scanner sc = new Scanner(System.in);
         boolean b = false;
@@ -25,7 +27,6 @@ public class MainMenuScreen {
             int opcion = sc.nextInt();
 
             while (opcion == 1 || b || opcion == 4) {
-
                 switch (opcion) {
                     case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
                         new CompetitionScreen().configuracion(datos);
@@ -33,10 +34,10 @@ public class MainMenuScreen {
                         CompetitionScreen.mostrarConfig(datos);
                         break;
                     case 2: // JUGAR
-                        new PlayScreen().juego(datos);
+                         playScreen.juego(datos);
                         break;
                     case 3: // RESULTADOS
-                        new ScoreScreen().show();
+                        new ScoreScreen(playScreen).show();
                         break;
                     case 4: // SALIR
                         return;
