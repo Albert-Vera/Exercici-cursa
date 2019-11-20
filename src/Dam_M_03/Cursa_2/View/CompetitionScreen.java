@@ -10,19 +10,19 @@ public class CompetitionScreen { // CLASE SUPRIMIDA
 
 //static DatosCompeti datos = new DatosCompeti();
 
-    public static void configuracion(DatosCompeti datos){
+    public void configuracion(DatosCompeti datos){
         System.out.println("Introduce tu nombre: ");
         insertarJugador(datos);
         System.out.println("Introduce número de oponentes: ");
         obtenerOponentes(datos);
         System.out.println("Introduce número de circuitos: ");
         circuitos(datos);
-        System.out.println("Elije con que vas a competir: ( Coche / Bicicleta / Patinete ) ");
-        configVehiculo(datos);
+//        System.out.println("Elije con que vas a competir: ( Coche / Bicicleta / Patinete ) ");
+//        configVehiculo(datos);
 
     }
 
-    public static void mostrarConfig(DatosCompeti datos){
+    public void mostrarConfig(DatosCompeti datos){
 
 
         System.out.println();

@@ -3,11 +3,8 @@ package Dam_M_03.Cursa_2.Manager;
 
 import Dam_M_03.Cursa_2.Model.DatosCompeti;
 import Dam_M_03.Cursa_2.View.ClasificationScreen;
-import Dam_M_03.Cursa_2.View.ClasificationScreen;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static java.util.Collections.sort;
 
 public class PlayScreen  {
@@ -20,6 +17,7 @@ public class PlayScreen  {
         int circuitos = datos.getCircuito();
         int op = datos.getOponentes();
         new ClasificationScreen().cabecera();
+
 
         for (int i = 1; i < circuitos+1; i++) {     // FOR DE CIRCUITOS
 
@@ -56,6 +54,7 @@ public class PlayScreen  {
                         }
                     }
                 }
+                datosCompeti.setVehiculo(datos.getVehiculo());
                 clasificacion.add(datosCompeti);
             }
             sort(clasificacion, new CompararTiempos(clasificacion));
@@ -68,19 +67,18 @@ public class PlayScreen  {
 
     }
 
-    static void totalPuntos (){
-
-    }
 
     static int obtenerTiempos(int a){
         return (int) (Math.random()*a);
     }
 
-    public static int asignarPuntuacion(int puntos){
+    public int asignarPuntuacion(int puntos){
 
         if (puntos > 0){
             puntos -= 2;
         }
         return puntos;
     }
+
+
 }

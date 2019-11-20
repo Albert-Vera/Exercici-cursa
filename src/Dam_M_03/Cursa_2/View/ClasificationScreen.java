@@ -8,6 +8,7 @@ import java.util.List;
 
 public class ClasificationScreen {
 
+    PlayScreen playScreen = new PlayScreen();
     public void cabecera(){
         System.out.println("     CIRCUITO        JUGADOR            TIEMPO      PUNTUACIÓN       TOTAL PUNTOS");
     }
@@ -16,7 +17,7 @@ public class ClasificationScreen {
         System.out.println();
 
         for (DatosCompeti resul : clasificacion){
-            puntos = PlayScreen.asignarPuntuacion(puntos);
+            puntos = playScreen.asignarPuntuacion(puntos);
             resul.setPuntuacion(puntos);
             resul.setTotalPuntuacion(resul.getTotalPuntuacion()+ puntos);
 

@@ -21,12 +21,16 @@ public class ScoreScreen {
     void show(){
         sort(ps.clasificacionCopia, new CompararPuntuaciones(ps.clasificacionCopia));
 
+        System.out.println("                   #################################################################");
+        System.out.println("                                  Clasificación del Mundial de: " + ps.clasificacionCopia.get(0).getVehiculo());
+        System.out.println("                   #################################################################");
+        System.out.println("\n                           PARTICIPANTES                     PUNTUACIÓN TOTAL   ");
         for (int i = 0; i < ps.clasificacionCopia.size(); i++) {
             if (0 == (ps.clasificacionCopia.get(i).getOponentes())) {
-                System.out.println(ps.clasificacionCopia.get(i).getNombre()+" "+ps.clasificacionCopia.get(i).getTotalPuntuacion());
+                System.out.println("                            " +ps.clasificacionCopia.get(i).getNombre()+"                          "+ps.clasificacionCopia.get(i).getTotalPuntuacion());
             }
             else {
-                System.out.println("Piloto "+ps.clasificacionCopia.get(i).getOponentes()+" "+ps.clasificacionCopia.get(i).getTotalPuntuacion());
+                System.out.println("                            Piloto "+ps.clasificacionCopia.get(i).getOponentes()+"                       "+ps.clasificacionCopia.get(i).getTotalPuntuacion());
             }
         }
 

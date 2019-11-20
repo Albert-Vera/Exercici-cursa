@@ -1,5 +1,6 @@
 package Dam_M_03.Cursa_2.View;
 
+import Dam_M_03.Cursa_2.Manager.Competicion;
 import Dam_M_03.Cursa_2.Manager.PlayScreen;
 import Dam_M_03.Cursa_2.Model.DatosCompeti;
 
@@ -8,6 +9,9 @@ import java.util.Scanner;
 
 public class MainMenuScreen {
     PlayScreen playScreen = new PlayScreen();
+    CompetitionScreen competitionScreen = new CompetitionScreen();
+    Competicion competicion = new Competicion();
+
 
     public  void showMenu() throws IOException {
         DatosCompeti datos = new DatosCompeti();
@@ -17,7 +21,6 @@ public class MainMenuScreen {
         while (true) {
             System.out.println("Cursa 2019");
             System.out.println("Opciones: ");
-
             System.out.println(" 1. Configuració de la competició");
             System.out.println(" 2. Jugar");
             System.out.println(" 3. Resultats/Palmares");
@@ -29,11 +32,12 @@ public class MainMenuScreen {
             while (opcion == 1 || b || opcion == 4) {
                 switch (opcion) {
                     case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
-                        new CompetitionScreen().configuracion(datos);
+                        competitionScreen.configuracion(datos);
                         b = true;
-                        CompetitionScreen.mostrarConfig(datos);
+                        competitionScreen.mostrarConfig(datos);
                         break;
                     case 2: // JUGAR
+                        competicion.configVehiculo(datos);
                          playScreen.juego(datos);
                         break;
                     case 3: // RESULTADOS

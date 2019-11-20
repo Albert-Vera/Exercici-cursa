@@ -26,9 +26,11 @@ public class Competicion {
         datos.setCircuito( sc.nextInt());
     }
 
-    public  static void  configVehiculo(DatosCompeti datos){
+    public void  configVehiculo(DatosCompeti datos){
 
         String cosa="";
+        System.out.println("Elije con que vas a competir: ( Coche / Bicicleta / Patinete ) ");
+
         while ( !cosa.equals("Coche") && !cosa.equals("Bicicleta") && !cosa.equals("Patinete")) {
             cosa = sc.nextLine();
 
