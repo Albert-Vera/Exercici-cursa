@@ -11,6 +11,7 @@ public class MainMenuScreen {
     PlayScreen playScreen = new PlayScreen();
     CompetitionScreen competitionScreen = new CompetitionScreen();
     Competicion competicion = new Competicion();
+    ShowConfigurarVehiculo showConfigurarVehiculo = new ShowConfigurarVehiculo();
 
 
     public  void showMenu() throws IOException {
@@ -37,6 +38,7 @@ public class MainMenuScreen {
                         competitionScreen.mostrarConfig(datos);
                         break;
                     case 2: // JUGAR
+                        showConfigurarVehiculo.showConfig();
                         competicion.configVehiculo(datos);
                          playScreen.juego(datos);
                         break;

@@ -10,7 +10,10 @@ public class ClasificationScreen {
 
     PlayScreen playScreen = new PlayScreen();
     public void cabecera(){
-        System.out.println("     CIRCUITO        JUGADOR            TIEMPO      PUNTUACIÓN       TOTAL PUNTOS");
+        System.out.println("                         --------------------------------------------------------------");
+        System.out.println("                         -----                  RESULTADOS DE LAS CARRERAS        -----");
+        System.out.println("                         --------------------------------------------------------------");
+        System.out.println("\n     CIRCUITO        JUGADOR            TIEMPO      PUNTUACIÓN       TOTAL PUNTOS");
     }
 
     public void showClasificacion(List<DatosCompeti> clasificacion, int puntos){
@@ -27,6 +30,7 @@ public class ClasificationScreen {
                 System.out.println("          " + resul.getCircuito() + "         Piloto " + resul.getOponentes() + "            " + resul.getHoras()+ ":"+ resul.getMinutos() + ":" + resul.getSegundos() + "          " + resul.getPuntuacion() + "            " + resul.getTotalPuntuacion());
             }
         }
+        System.out.println("\n\n");
     }
 
     public void showClasificacionTotal() {
