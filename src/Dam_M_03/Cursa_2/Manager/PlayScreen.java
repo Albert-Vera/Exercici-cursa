@@ -18,7 +18,7 @@ public class PlayScreen  {
         int op = datos.getOponentes();
         new ClasificationScreen().cabecera();
 
-
+        //TODO refactro buckle no funcioa
         for (int i = 1; i < circuitos+1; i++) {     // FOR DE CIRCUITOS
 
             for (int j = 0; j < op; j++) {      // FOR DE OPONENTES

@@ -26,15 +26,12 @@ public class ClasificationScreen {
 
             if (resul.getOponentes() == 0){
                 System.out.println("          "  + resul.getCircuito()+ "         " + resul.getNombre() + "              " +  resul.getHoras()+ ":"+ resul.getMinutos() + ":" + resul.getSegundos() + "          " + resul.getPuntuacion() + "            "+ resul.getTotalPuntuacion());
-            }else {
+            }
+
+            else {
                 System.out.println("          " + resul.getCircuito() + "         Piloto " + resul.getOponentes() + "            " + resul.getHoras()+ ":"+ resul.getMinutos() + ":" + resul.getSegundos() + "          " + resul.getPuntuacion() + "            " + resul.getTotalPuntuacion());
             }
         }
         System.out.println("\n\n");
     }
-
-    public void showClasificacionTotal() {
-
-    }
-
 }

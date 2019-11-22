@@ -17,7 +17,8 @@ public class MainMenuScreen {
     public  void showMenu() throws IOException {
         DatosCompeti datos = new DatosCompeti();
         Scanner sc = new Scanner(System.in);
-        boolean b = false;
+        boolean primeropcion = false;
+        boolean segundaopcion = false;
 
         while (true) {
             System.out.println("Cursa 2019");
@@ -28,22 +29,28 @@ public class MainMenuScreen {
             System.out.println(" 4. Acabar");
             System.out.println();
             System.out.print("Elige una opción: ");
-            int opcion = sc.nextInt();
 
-            while (opcion == 1 || b || opcion == 4) {
+            int opcion = leerScanner();
+
+
+
+            while (opcion == 1 || primeropcion || opcion == 4) {
                 switch (opcion) {
                     case 1: // PONER VALORES AL JUGADOR, CONFIGURAR COMPETICION
                         competitionScreen.configuracion(datos);
-                        b = true;
+                        primeropcion = true;
                         competitionScreen.mostrarConfig(datos);
                         break;
                     case 2: // JUGAR
                         showConfigurarVehiculo.showConfig();
                         competicion.configVehiculo(datos);
                          playScreen.juego(datos);
+                         segundaopcion=true;
                         break;
                     case 3: // RESULTADOS
-                        new ScoreScreen(playScreen).show();
+                        if (segundaopcion) {
+                            new ScoreScreen(playScreen).show();
+                        }
                         break;
                     case 4: // SALIR
                         return;
@@ -53,11 +60,36 @@ public class MainMenuScreen {
                 }
                 break;
             }
-            if (b == false) {
-                System.out.println("------------------------------");
-                System.out.println("Primer configura la competició");
-                System.out.println("------------------------------");
+            if (!primeropcion) {
+                System.out.println("                        ------------------------------");
+                System.out.println("                        Primer configura la competició");
+                System.out.println("                        ------------------------------");
+            }
+            if (!segundaopcion & primeropcion) {
+                System.out.println("                        ------------------------------");
+                System.out.println("                               Primer has de jugar");
+                System.out.println("                        ------------------------------");
             }
         }
+
+
+    }
+    public int leerScanner(){
+
+        Scanner sc = new Scanner(System.in);
+        boolean repetir= true;
+        String texto = "";
+        int numero = 0;
+
+        while (repetir) {
+            try {
+                texto = sc.nextLine();
+                numero = Integer.parseInt(texto);
+                repetir = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Ese valor no es válido");
+            }
+        }
+        return numero;
     }
 }

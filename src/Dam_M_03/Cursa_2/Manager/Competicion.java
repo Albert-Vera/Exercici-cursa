@@ -2,28 +2,60 @@ package Dam_M_03.Cursa_2.Manager;
 
 import Dam_M_03.Cursa_2.Model.*;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static Dam_M_03.Cursa_2.Model.DatosCompeti.*;
 
 public class Competicion {
-    DatosCompeti datosCompeti = new DatosCompeti();
     private  Scanner sc = new Scanner(System.in);
 
 
     public  void insertarJugador(DatosCompeti datos){
-        datos.setNombre(sc.nextLine());
 
+        String nombre = "";
+
+        while (nombre.equals("")) {
+            nombre = sc.nextLine();
+            datos.setNombre(nombre);
+        }
     }
 
     public  void obtenerOponentes(DatosCompeti datos){
 
-        datos.setOponentes(sc.nextInt());
+        boolean repetir= true;
+        String texto = "";
+        int numero = 0;
 
+        while (repetir) {
+            try {
+                texto = sc.nextLine();
+                numero = Integer.parseInt(texto);
+                repetir = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Ese valor no es válido");
+            }
+        }
+
+        datos.setOponentes(numero);
     }
 
     public void circuitos(DatosCompeti datos){
-        datos.setCircuito( sc.nextInt());
+        boolean repetir= true;
+        String texto = "";
+        int numero = 0;
+
+        while (repetir) {
+            try {
+                texto = sc.nextLine();
+                numero = Integer.parseInt(texto);
+                repetir = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Ese valor no es válido");
+            }
+        }
+
+        datos.setCircuito(numero);
     }
 
     public void  configVehiculo(DatosCompeti datos){
