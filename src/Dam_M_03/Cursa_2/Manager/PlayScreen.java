@@ -68,7 +68,7 @@ public class PlayScreen  {
     }
 
 
-    static int obtenerTiempos(int a){
+    int obtenerTiempos(int a){
         return (int) (Math.random()*a);
     }
 
